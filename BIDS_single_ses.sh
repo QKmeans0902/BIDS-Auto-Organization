@@ -56,6 +56,7 @@ if [ -d ${dcmdir}/rest ];then
 			do
 			taskexist=`cat ${funcjson} | jq '.TaskName'`
 			if [ "$taskexist" == "null" ]; then
+				jsonname="${funcjson%.*}"
 				taskfield=$(echo $jsonname | cut -d '_' -f2 | cut -d '-' -f2)
 				jq '. |= . + {"TaskName":"'${taskfield}'"}' ${funcjson} > tasknameadd.json
 				rm ${funcjson}
