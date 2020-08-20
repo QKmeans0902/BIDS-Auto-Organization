@@ -4,7 +4,7 @@ Automatical organization bash script for your MRI images into BIDS format, tempo
 
 ## Raw DICOM file structure
 
-Dataset_single_ses/<br>
+* Dataset/<br>
   * Dicom/<br>
     * anat/<br>
       * 001/<br>
