@@ -21,4 +21,8 @@ Automatical organization bash script for your MRI images into BIDS format, tempo
 
 ## dependencies
 
-The bash script requires dcm2niix and jo to be installed.
+The bash script requires *dcm2niix* and *jo* to be installed in Ubuntu as follows:
+
+```Bash
+apt-get install dcm2niix
+apt-get install jo
