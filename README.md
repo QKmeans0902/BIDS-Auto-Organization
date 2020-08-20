@@ -9,8 +9,8 @@ Automatical organization bash script for your MRI images into BIDS format, tempo
 >>> anat/<br>
 >>>> 001/<br>
 >>>> 002/<br> 
->>>> ...<br>
->> dwi/<br>
+>>>> ...
+>>> dwi/<br>
 >>>> 001/<br>
 >>>> 002/<br>
 >>>> ...<br>
