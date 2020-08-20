@@ -10,11 +10,11 @@ Automatical organization bash script for your MRI images into BIDS format, tempo
 >>>> 001/<br>
 >>>> 002/<br> 
 >>>> ...<br>
->>> dwi/<br>
+>> dwi/<br>
 >>>> 001/<br>
 >>>> 002/<br>
 >>>> ...<br>
->>> rest/<br>
+>> rest/<br>
 >>>> 001/<br>
 >>>> 002/<br>
 >>>> ...<br>
