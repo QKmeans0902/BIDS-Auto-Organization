@@ -2,7 +2,9 @@
 
 set -e
 
+# setting your dataset path here
 homedir=~/Desktop/BIDS_test
+
 dcmdir=${homedir}/Dicom
 niidir=${homedir}/Nifti
 
