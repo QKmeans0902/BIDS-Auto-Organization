@@ -52,9 +52,29 @@ if [ -d ${dcmdir}/rest ];then
 		cd ${niidir}/sub-${subj}/func
 		mv *.json sub-${subj}_task-rest_bold.json
 		mv *.nii sub-${subj}_task-rest_bold.nii
+		for funcjson in `ls *.json`
+			do
+			taskexist=`cat ${funcjson} | jq '.TaskName'`
+			if [ "$taskexist" == "null" ]; then
+				taskfield=$(echo $jsonname | cut -d '_' -f2 | cut -d '-' -f2)
+				jq '. |= . + {"TaskName":"'${taskfield}'"}' ${funcjson} > tasknameadd.json
+				rm ${funcjson}
+				mv tasknameadd.json ${funcjson}
+				echo "TaskName was added to ${jsonname} and matches the tasklabel in the filename"
+			else
+				Taskquotevalue=$(jq '.TaskName' ${funcjson})
+				Taskvalue=$(echo $Taskquotevalue | cut -d '"' -f2)	
+				jsonname="${funcjson%.*}"
+				taskfield=$(echo $jsonname | cut -d '_' -f2 | cut -d '-' -f2)
+				if [ $Taskvalue == $taskfield ]; then
+					echo "TaskName is present and matches the tasklabel in the filename"
+				else
+					echo "TaskName and tasklabel do not match"
+				fi
+			fi
+			done
 		done
 fi
-
 
 
 
